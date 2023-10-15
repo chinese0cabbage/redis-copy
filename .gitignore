@@ -19,7 +19,7 @@ redis-benchmark
 redis-check-aof
 redis-check-rdb
 redis-check-dump
-redis-cli
+redis-client
 redis-sentinel
 redis-server
 doc-tools
