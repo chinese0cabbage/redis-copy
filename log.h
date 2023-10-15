@@ -15,8 +15,7 @@ static void logTime(void)
         printf("get time error\n");
         return;
     }
-    time_t mt = time(NULL);
-    struct tm *tmr = gmtime(&mt);
+    struct tm *tmr = localtime(&tmv.tv_sec);
     char us[6] = {0};
     sprintf(us, "%lu", tmv.tv_usec);
     memcpy(szTime + strftime(szTime, 18, "%m-%d %H:%M:%S.", tmr), us, 6);
