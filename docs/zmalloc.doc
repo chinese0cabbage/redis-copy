@@ -3,3 +3,8 @@ https://gcc.gnu.org/onlinedocs/gcc-6.1.0/gcc/C-Extensions.html#C-Extensions
 
 chinese csdn reference page:
 https://blog.csdn.net/weaiken/article/details/88085360
+
+the syntax format for __attribute__ is like __attribute__((attribute-list))
+when __attribute__ is embellished for object, usage like const, volatile, e.g:int c __attribute__((unused));
+when __attribute__ is embellished for function, usage like inline, nothrow
+when __attribute__ is embellished for struct, can only be placed before the type identifier

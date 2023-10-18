@@ -1,10 +1,10 @@
 #pragma once
 #include <malloc.h>
 
-#define zmalloc_size(p) malloc_usable_size(p)
-
 //those __attribute__ is used to avoid "-Wstringop-overread" warning, 
 //since gcc-12 and with LTO enabled this bug may be removed once
+
+//alloc size byte mnomory, if fail, then abort, else return the pointer point to allocated memory
 __attribute__((malloc, alloc_size(1), noinline))
 void *zmalloc(size_t size);
 
@@ -17,6 +17,7 @@ void *zcalloc_num(size_t num, size_t size);
 __attribute__((alloc_size(2), noline))
 void *zrealloc(void *ptr, size_t size);
 
+//alloc size byte mnomory, the defference with zmalloc is if fail, return NULL pointer
 __attribute__((malloc, alloc_size(1), noinline))
 void *ztrymalloc(size_t size);
 
@@ -64,12 +65,12 @@ size_t zmalloc_get_smap_byte_by_field(char *field, long pid);
 
 size_t zmalloc_get_memory_size(void);
 
+//the wrapper for free(*ptr only)
 void zlibc_free(void *ptr);
 
 void zmadvise_dontneed(void *ptr);
 
-#define zmalloc_usable_size(p) zmalloc_size(p)
-
+//just return the input ptr
 __attribute__((alloc_size(2), noinline))
 void *extend_to_usable(void *ptr, size_t size);
 

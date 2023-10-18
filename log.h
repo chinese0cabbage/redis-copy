@@ -6,9 +6,9 @@
 #include <sys/time.h>
 #include <string.h>
 
-static char szTime[19];
+static char __attribute__((unused)) szTime[19];
 
-static void logTime(void)
+__attribute__((unused)) static void logTime(void)
 {
     struct timeval tmv;
     if(gettimeofday(&tmv, NULL) < 0){

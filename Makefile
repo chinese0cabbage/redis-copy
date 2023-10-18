@@ -1,5 +1,5 @@
 DEBUG= -g
-CFLAGS= -std=c99 -pedantic -O2 -Wall -W -DSDS_ABORT_ON_OOM -Wno-builtin-macro-redefined -U__file__ -D__FILE__='"$(notdir $<)"'
+CFLAGS= -std=gnu11 -pedantic -O2 -Wall -W -DSDS_ABORT_ON_OOM -Wno-builtin-macro-redefined -U__file__ -D__FILE__='"$(notdir $<)"'
 
 SERVER_OBJ = redis-server.o zmalloc.o
 CLIENT_OBJ = redis-client.o
