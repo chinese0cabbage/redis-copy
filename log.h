@@ -21,4 +21,8 @@ __attribute__((unused)) static void logTime(void)
     memcpy(szTime + strftime(szTime, 18, "%m-%d %H:%M:%S.", tmr), us, 6);
 }
 
-#define RLOG(format, ...) logTime(); printf("%s %s:%d] " format "\n", szTime, __FILE__, __LINE__, ##__VA_ARGS__)
+#define RLOG(format, ...) \
+do{ \
+    logTime(); \
+    printf("%s %s:%d] " format "\n", szTime, __FILE__, __LINE__, ##__VA_ARGS__); \
+}while(0)
