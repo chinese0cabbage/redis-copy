@@ -1,6 +1,6 @@
 #include "log.h"
-
+#include "zmalloc_test.h"
 int main(){
-    RLOG("%s", "111");
+    zmalloc_test();
     return 0;
 }
