@@ -41,7 +41,7 @@ sds getAbsolutePath(char *filename);
 long getTimeZone(void);
 int pathIsBaseName(char *path);
 int dirCreateIfMissing(char *dname);
-int dirExits(char *dname);
+int dirExists(char *dname);
 int dirRemove(char *dname);
 int fileExist(char *filename);
 sds makePath(char *path, char *filename);

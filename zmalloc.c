@@ -207,6 +207,7 @@ void zfree(void *ptr){
     if(ptr == NULL)
         return;
     atomic_fetch_sub_explicit(&used_memory, malloc_usable_size(ptr), memory_order_relaxed);
+    free(ptr);
 }
 
 void zfree_usable(void *ptr, size_t *usable){
