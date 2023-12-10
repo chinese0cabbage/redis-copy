@@ -1,7 +1,7 @@
 DEBUG= -g
 CFLAGS= -std=gnu11 -pedantic -O2 -Wall -W -DSDS_ABORT_ON_OOM -Wno-builtin-macro-redefined -U__file__ -D__FILE__='"$(notdir $<)"'
 
-SERVER_OBJ = redis-server.o zmalloc.o sds.o util.o sha256.o fpconv_dtoa.o mt19937-64.c dict.c redisassert.c siphash.c
+SERVER_OBJ = redis-server.o zmalloc.o sds.o util.o sha256.o fpconv_dtoa.o mt19937-64.c dict.c redisassert.c siphash.c adlist.c
 CLIENT_OBJ = redis-client.o
 BENCH_OBJ = redis-bench.o
 

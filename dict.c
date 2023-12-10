@@ -986,7 +986,7 @@ void *dictFindPositionForInsert(dict *d, const void *key, dictEntry **existing){
         he = d->ht_table[table][idx];
         while(he){
             void *he_key = dictGetKey(he);
-            if(key = he_key || d->type->keyCompare? d->type->keyCompare(d, key, he_key): (key == he_key)){
+            if(key == he_key || d->type->keyCompare? d->type->keyCompare(d, key, he_key): (key == he_key)){
                 if(existing)
                     *existing = he;
                 return NULL;
